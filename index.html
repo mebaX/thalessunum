@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miletli Thales | Felsefenin Doğuşu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #b8860b;
+            --text-light: #f8f9fa;
+            --text-dark: #2d3436;
+            --bg-cream: #fdfbf7;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Scroll Progress Bar */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: var(--secondary);
+            z-index: 1000;
+            width: 0%;
+        }
+
+        /* Section Styling */
+        section {
+            min-height: 100vh;
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-bottom: 1px solid rgba(184, 134, 11, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), 
+                        url('https://images.unsplash.com/photo-1543233403-9d04427495b4?auto=format&fit=crop&q=80') center/cover;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        /* Typography & Layout */
+        .section-title {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--secondary);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Visual Elements */
+        .image-placeholder {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 20px 20px 0 var(--secondary);
+            overflow: hidden;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Quotes */
+        blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            text-align: center;
+            padding: 40px;
+            background: rgba(184, 134, 11, 0.05);
+            border-left: 10px solid var(--secondary);
+            margin: 40px 0;
+        }
+
+        /* Animations */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-20px) translateX(-50%);}
+            60% {transform: translateY(-10px) translateX(-50%);}
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 5%; }
+            .section-title { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress-bar"></div>
+
+    <section class="hero">
+        <h1>Miletli Thales</h1>
+        <p>"Batı Felsefesinin ve Biliminin Kurucusu"</p>
+        <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
+    </section>
+
+    <section id="hayatı">
+        <div class="content-grid">
+            <div>
+                <h2 class="section-title">Yaşamı ve Milet</h2>
+                <p>MÖ 624-546 yılları arasında, bugün Aydın ili sınırlarında bulunan <strong>Milet</strong> şehrinde yaşamıştır. Antik Yunan'ın Yedi Bilgesi'nden ilkidir.</p>
+                <p style="margin-top: 15px;">Thales, sadece bir düşünür değil; aynı zamanda bir mühendis, astronom ve devlet adamıydı. Doğa olaylarını mitolojiyle değil, akılla (logos) açıklama çabası felsefeyi başlatmıştır.</p>
+            </div>
+            <div class="image-placeholder">
+                <img src="https://images.unsplash.com/photo-1511210434863-71a37887754d?auto=format&fit=crop&q=80" alt="Antik Milet Kenti">
+            </div>
+        </div>
+    </section>
+
+    <section id="felsefe" style="background: #f0f2f5;">
+        <h2 class="section-title">Her Şeyin Özü: Arkhe</h2>
+        <div class="content-grid">
+            <div class="card">
+                <i class="fas fa-tint"></i>
+                <h3>Arkhe Olarak Su</h3>
+                <p>Thales "Her şeyin temel maddesi (arkhe) nedir?" sorusuna <strong>SU</strong> cevabını vermiştir. Ona göre dünya suyun üzerinde yüzen bir disk gibidir.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-seedling"></i>
+                <h3>Neden Su?</h3>
+                <p>Tohumların nemli olması, besinlerin su içermesi ve yaşamın ancak suyla mümkün olması onu bu gözleme itmiştir. İlk kez metafizik bir soruyu fiziksel bir maddeyle cevaplamıştır.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-infinity"></i>
+                <h3>Hilozoizm</h3>
+                <p>"Her şey tanrılarla doludur" diyerek maddenin kendi içinde bir canlılığa ve değişim gücüne sahip olduğunu savunmuştur.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="bilim">
+        <h2 class="section-title">Bilimin ve Matematiğin Öncüsü</h2>
+        <div class="content-grid">
+            <div class="image-placeholder">
+                <img src="https://images.unsplash.com/photo-1506318137071-a8e063b4bcc0?auto=format&fit=crop&q=80" alt="Güneş Tutulması">
+            </div>
+            <div>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 20px;">
+                        <h3 style="color: var(--secondary);"><i class="fas fa-sun"></i> Astronomi</h3>
+                        <p>MÖ 28 Mayıs 585'te gerçekleşen <strong>Güneş Tutulması</strong>'nı önceden tahmin ederek Mezopotamya bilgisini bilimsel bir tahmine dönüştürmüştür.</p>
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <h3 style="color: var(--secondary);"><i class="fas fa-draw-polygon"></i> Geometri (Thales Teoremi)</h3>
+                        <p>Çemberin çapla ikiye bölündüğünü, ikizkenar üçgenin taban açılarının eşit olduğunu kanıtlamıştır. Piramitlerin boyunu gölge uzunluğuyla hesaplamıştır.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="anekdot" style="background: var(--primary); color: white;">
+        <h2 class="section-title" style="color: white;">Felsefe Ne İşe Yarar?</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p>Halkın felsefecilerin fakir ve işe yaramaz olduğunu söylemesi üzerine Thales, yıldızlara bakarak zeytin hasadının çok iyi geçeceğini öngörmüştür.</p>
+            <p style="font-size: 1.4rem; color: var(--secondary); margin-top: 20px;">Tüm zeytin işliklerini önceden kiralayarak büyük bir servet kazanmış ve amacının zenginlik değil, bilgelerin istediklerinde zengin olabileceğini göstermek olduğunu söylemiştir.</p>
+        </div>
+    </section>
+
+    <section>
+        <blockquote>
+            "Kendini tanı (Gnothi Seauton)." <br>
+            <small>— Miletli Thales</small>
+        </blockquote>
+        <div style="text-align: center; margin-top: 50px;">
+            <h2 style="font-size: 2.5rem; color: var(--primary);">Sonuç: Neden Önemli?</h2>
+            <p style="max-width: 700px; margin: 20px auto;">Ondan önce her şey mitolojiyle (Zeus kızdı, Poseidon vurdu) açıklanırken, Thales ile birlikte insanoğlu <strong>akıl yoluyla evreni anlama</strong> serüvenine başlamıştır. O, bugün kullandığımız bilimsel metodun ilk tohumlarını atan kişidir.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Baha Mert Yılmazer | Felsefe Dersi Sunumu</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">&copy; 2026 - Thales Projesi</p>
+    </footer>
+
+    <script>
+        // Scroll Progress Lineer Update
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+</html>
